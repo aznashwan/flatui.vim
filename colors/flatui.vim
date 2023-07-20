@@ -145,7 +145,7 @@ endif
   call s:h("StatusLineNC", { "fg": s:lightBg, "bg": s:lightBg })
   call s:h("SignColumn",   { "fg": s:lightBg })
   call s:h("VertSplit",    { "fg": s:lightBg, "bg": s:lightBg })
-  call s:h("TabLine",      { "fg": s:lightBg, "bg": s:lightBg })
+  call s:h("TabLine",      { "fg": s:bg, "bg": s:lightBg })
   call s:h("TabLineSel",   { "gui": "bold", "cterm": "bold" })
   call s:h("Folded",       { "fg": s:bg, "bg": s:lightBg })
   call s:h("Directory",    { "fg": s:lightAccent3 })
