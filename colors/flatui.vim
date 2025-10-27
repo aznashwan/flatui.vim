@@ -172,7 +172,8 @@ hi! link SpecialKey	NonText
 "}}}
 
 " Highlights - Generic Syntax ------------------------------{{{
-  call s:h("Comment",    { "fg": s:lightBg, "gui": "italic" })
+  " call s:h("Comment",    { "fg": s:lightBg, "gui": "italic" })
+  call s:h("Comment",    { "fg": s:lightAccent1, "gui": "italic" })
 
   call s:h("Constant",   { "fg": s:lightAccent3, "gui": "bold", "cterm": "bold" })
   call s:h("String",     { "fg": s:darkAccent3 })
