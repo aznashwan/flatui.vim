@@ -27,12 +27,16 @@ let s:concrete=       { "gui": "#95a5a6", "cterm": "247" }
 let s:asbestos=       { "gui": "#7f8c8d", "cterm": "245" }
 
 let s:turquoise=      { "gui": "#1abc9c", "cterm": "36"  }
+let s:lightTurquoise ={ "gui": "#2accac", "cterm": "36"  }
 let s:greenSea=       { "gui": "#16a085", "cterm": "29" }
+let s:lightGreenSea = { "gui": "#46d0b5", "cterm": "29" }
 let s:emerald=        { "gui": "#2ecc71", "cterm": "41" }
 let s:nephritis=      { "gui": "#27ae60", "cterm": "35" }
 
 let s:peterRiver=     { "gui": "#3498db", "cterm": "33"  }
+let s:lighterPeterRiver={ "gui": "#54b8fb", "cterm": "33"  }
 let s:belizeHole=     { "gui": "#2980b9", "cterm": "26"  }
+let s:lightBelizeHole={ "gui": "#49a0d9", "cterm": "26"  }
 let s:amethyst=       { "gui": "#9b59b6", "cterm": "133" }
 let s:wisteria=       { "gui": "#8e44ad", "cterm": "97" }
 
@@ -55,6 +59,7 @@ if &background=="light"
   let s:neutral2=s:asbestos
 
   let s:lightAccent1=s:turquoise
+  let s:lighterAccent1=s:lightTurquoise
   let s:lightAccent2=s:emerald
   let s:lightAccent3=s:peterRiver
   let s:lightAccent4=s:amethyst
@@ -81,14 +86,17 @@ else
   let s:darkAccent1=s:turquoise
   let s:darkAccent2=s:emerald
   let s:darkAccent3=s:peterRiver
+  let s:lessDarkAccent3=s:lighterPeterRiver
   let s:darkAccent4=s:amethyst
   let s:darkAccent5=s:sunFlower
   let s:darkAccent6=s:carrot
   let s:darkAccent7=s:alizarin
 
   let s:lightAccent1=s:greenSea
+  let s:lighterAccent1=s:lightGreenSea
   let s:lightAccent2=s:nephritis
   let s:lightAccent3=s:belizeHole
+  let s:lighterAccent3=s:lightBelizeHole
   let s:lightAccent4=s:wisteria
   let s:lightAccent5=s:orange
   let s:lightAccent6=s:pumpkin
@@ -173,10 +181,10 @@ hi! link SpecialKey	NonText
 
 " Highlights - Generic Syntax ------------------------------{{{
   " call s:h("Comment",    { "fg": s:lightBg, "gui": "italic" })
-  call s:h("Comment",    { "fg": s:lightAccent1, "gui": "italic" })
+  call s:h("Comment",    { "fg": s:lighterAccent1, "gui": "italic" })
 
-  call s:h("Constant",   { "fg": s:lightAccent3, "gui": "bold", "cterm": "bold" })
-  call s:h("String",     { "fg": s:darkAccent3 })
+  call s:h("Constant",   { "fg": s:lighterAccent3, "gui": "bold", "cterm": "bold" })
+  call s:h("String",     { "fg": s:lessDarkAccent3 })
   call s:h("Character",  { "fg": s:darkAccent3, "gui": "bold", "cterm": "bold" })
 
   call s:h("Identifier", { "fg": s:darkAccent2 })
@@ -189,7 +197,8 @@ hi! link SpecialKey	NonText
 
   call s:h("PreProc",    { "fg": s:lightAccent2, "gui": "bold", "cterm": "bold" })
 
-  call s:h("Type",       { "fg": s:lightAccent4 })
+  " call s:h("Type",       { "fg": s:lightAccent4 })
+  call s:h("Type",       { "fg": s:lightAccent5 })
 
   call s:h("Special",    { "fg": s:darkAccent6 })
   call s:h("Delimiter",  { "fg": s:neutral2 })
