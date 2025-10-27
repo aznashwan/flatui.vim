@@ -114,7 +114,8 @@ endfunction
 if version >= 700
     call s:h("CursorLine",  { "bg": s:lightBg })
     call s:h("MatchParen",  { "fg": s:norm, "bg": s:lightAccent5, "gui": "bold" })
-    call s:h("Pmenu",       { "fg": s:bg, "bg": s:lightNorm })
+    " call s:h("Pmenu",       { "fg": s:bg, "bg": s:lightNorm })
+    call s:h("Pmenu",       { "bg": s:bg })
     call s:h("PmenuThumb",  { "bg": s:lightAccent5 })
     call s:h("PmenuSBar",   { "bg": s:norm })
     call s:h("PmenuSel",    { "bg": s:lightAccent5 })
