@@ -46,7 +46,7 @@ let s:pomegranate=    { "gui": "#c0392b", "cterm": "124" }
 
 
 if &background=="light"
-  let s:bg=s:clouds
+  let s:bg={ "gui": "#FFFFFF", "cterm": "256" }  " let s:bg=s:clouds
   let s:norm=s:midnightBlue
   let s:lightNorm=s:wetAsphalt
   let s:lightBg=s:silver
