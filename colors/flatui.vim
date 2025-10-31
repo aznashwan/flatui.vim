@@ -22,6 +22,7 @@ let g:colors_name="flatui"
 let s:white=          { "gui": "#ffffff", "cterm": "255" }
 let s:black=          { "gui": "#000000", "cterm": "0" }
 let s:appTermBlue=    { "gui": "#aad1ff", "cterm": "36" }
+let s:appTermClouds=  { "gui": "#ebebeb", "cterm": "255" }
 
 let s:midnightBlue=   { "gui": "#2c3e50", "cterm": "236"  }
 let s:clouds=         { "gui": "#ecf0f1", "cterm": "255" }
@@ -54,7 +55,7 @@ let s:pomegranate=    { "gui": "#c0392b", "cterm": "124" }
 
 
 if &background=="light"
-  let s:bg=s:clouds
+  let s:bg=s:appTermClouds
   let s:norm=s:midnightBlue
   let s:lightNorm=s:wetAsphalt
   let s:lightBg=s:silver
