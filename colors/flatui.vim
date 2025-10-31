@@ -21,6 +21,7 @@ let g:colors_name="flatui"
 " Define reusable colors
 let s:white=          { "gui": "#ffffff", "cterm": "255" }
 let s:black=          { "gui": "#000000", "cterm": "0" }
+let s:appTermBlue=    { "gui": "#aad1ff", "cterm": "36" }
 
 let s:midnightBlue=   { "gui": "#2c3e50", "cterm": "236"  }
 let s:clouds=         { "gui": "#ecf0f1", "cterm": "255" }
@@ -53,7 +54,7 @@ let s:pomegranate=    { "gui": "#c0392b", "cterm": "124" }
 
 
 if &background=="light"
-  let s:bg={ "gui": "#FFFFFF", "cterm": "256" }  " let s:bg=s:clouds
+  let s:bg=s:clouds
   let s:norm=s:midnightBlue
   let s:lightNorm=s:wetAsphalt
   let s:lightBg=s:silver
@@ -153,8 +154,8 @@ if &background=="light"
   call s:h("NonText",      { "fg": s:neutral1 })
   call s:h("Cursor",       { "fg": s:bg, "bg": s:lightNorm })
   call s:h("Visual",       { "bg": s:lightAccent2, "fg": s:bg })
-  call s:h("IncSearch",    { "bg": s:lightAccent6 })
-  call s:h("Search",       { "bg": s:lightAccent5 })
+  call s:h("IncSearch",    { "bg": s:appTermBlue, "fg": s:black })
+  call s:h("Search",       { "bg": s:appTermBlue, "fg": s:black })
   call s:h("StatusLine",   { "fg": s:bg, "bg": s:lightAccent1, "gui": "italic", "cterm": "bold" })
   call s:h("StatusLineNC", { "fg": s:lightBg, "bg": s:lightBg })
   call s:h("SignColumn",   { "fg": s:lightBg })
@@ -213,7 +214,32 @@ hi! link SpecialKey	NonText
 "}}}
 
 " Highlights - Generic Syntax ------------------------------{{{
-  " call s:h("Comment",    { "fg": s:lightBg, "gui": "italic" })
+if &background=="light"
+  call s:h("Comment",    { "fg": s:lighterAccent1, "gui": "italic" })
+
+  call s:h("Constant",   { "fg": s:lightAccent3, "gui": "bold", "cterm": "bold" })
+  call s:h("String",     { "fg": s:darkAccent3 })
+  call s:h("Character",  { "fg": s:darkAccent3, "gui": "bold", "cterm": "bold" })
+
+  call s:h("Identifier", { "fg": s:darkAccent2 })
+  call s:h("Function",   { "fg": s:lightNorm, "gui": "bold", "cterm": "bold" })
+
+  call s:h("Statement",  { "fg": s:darkAccent4 })
+  call s:h("Operator",   { "fg": s:darkAccent1 })
+  call s:h("Keyword",    { "fg": s:lightAccent1, "gui": "bold", "cterm": "bold" })
+  call s:h("Exception",  { "fg": s:lightAccent7 })
+
+  call s:h("PreProc",    { "fg": s:lightAccent2, "gui": "bold", "cterm": "bold" })
+
+  call s:h("Type",       { "fg": s:lightAccent4 })
+
+  call s:h("Special",    { "fg": s:darkAccent6 })
+  call s:h("Delimiter",  { "fg": s:neutral2 })
+
+  call s:h("Underlined", { "fg": s:norm, "gui": "underline", "cterm": "underline" })
+
+  call s:h("Todo",       { "fg": s:lightAccent5, "bg": s:darkAccent5, "gui": "bold", "cterm": "bold" })
+else
   call s:h("Comment",    { "fg": s:lighterAccent1, "gui": "italic" })
 
   call s:h("Constant",   { "fg": s:lighterAccent3, "gui": "bold", "cterm": "bold" })
@@ -239,6 +265,7 @@ hi! link SpecialKey	NonText
   call s:h("Underlined", { "fg": s:norm, "gui": "underline", "cterm": "underline" })
 
   call s:h("Todo",       { "fg": s:lightAccent5, "bg": s:darkAccent5, "gui": "bold", "cterm": "bold" })
+endif
 
 hi! link Error		ErrorMsg
 
