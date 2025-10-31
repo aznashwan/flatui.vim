@@ -19,6 +19,9 @@ let g:colors_name="flatui"
 
 " The Colors -----------------------------------------------{{{
 " Define reusable colors
+let s:white=          { "gui": "#ffffff", "cterm": "255" }
+let s:black=          { "gui": "#000000", "cterm": "0" }
+
 let s:midnightBlue=   { "gui": "#2c3e50", "cterm": "236"  }
 let s:clouds=         { "gui": "#ecf0f1", "cterm": "255" }
 let s:silver=         { "gui": "#e8e8e8", "cterm": "7" }
@@ -144,6 +147,8 @@ endif
 "}}}
 
 " Highlights - UI ------------------------------------------{{{
+
+if &background=="light"
   call s:h("Normal",       { "fg": s:norm, "bg": s:bg })
   call s:h("NonText",      { "fg": s:neutral1 })
   call s:h("Cursor",       { "fg": s:bg, "bg": s:lightNorm })
@@ -168,6 +173,34 @@ endif
   call s:h("User1",        { "fg": s:bg, "bg": s:darkAccent1 })
   call s:h("User2",        { "fg": s:bg, "bg": s:darkAccent2 })
   call s:h("User3",        { "fg": s:bg, "bg": s:darkAccent3 })
+else
+  call s:h("Normal",       { "fg": s:norm, "bg": s:bg })
+  call s:h("NonText",      { "fg": s:neutral1 })
+  call s:h("Cursor",       { "fg": s:bg, "bg": s:lightNorm })
+  call s:h("Visual",       { "bg": s:lightAccent2, "fg": s:bg })
+  call s:h("IncSearch",    { "bg": s:white, "fg": s:black })
+  call s:h("Search",       { "bg": s:white, "fg": s:black })
+  call s:h("StatusLine",   { "fg": s:bg, "bg": s:lightAccent1, "gui": "italic", "cterm": "bold" })
+  call s:h("StatusLineNC", { "fg": s:lightBg, "bg": s:lightBg })
+  call s:h("SignColumn",   { "fg": s:lightBg })
+  call s:h("VertSplit",    { "fg": s:lightBg, "bg": s:lightBg })
+  call s:h("TabLine",      { "fg": s:bg, "bg": s:lightBg })
+  call s:h("TabLineSel",   { "gui": "bold", "cterm": "bold" })
+  call s:h("Folded",       { "fg": s:bg, "bg": s:lightBg })
+  call s:h("Directory",    { "fg": s:lightAccent3 })
+  call s:h("Title",        { "fg": s:lightAccent6, "gui": "bold", "cterm": "bold" })
+  call s:h("ErrorMsg",     { "fg": s:lightAccent7, "bg": s:darkAccent7, "gui": "bold", "cterm": "bold" })
+  call s:h("WarningMsg",   { "fg": s:lightAccent6, "bg": s:darkAccent6, "gui": "bold", "cterm": "bold" })
+  call s:h("DiffAdd",      { "bg": s:lightAccent2 })
+  call s:h("DiffChange",   { "bg": s:lightAccent6 })
+  call s:h("DiffDelete",   { "bg": s:lightAccent7 })
+  call s:h("DiffText",     { "bg": s:lightAccent6, "gui": "bold", "cterm": "bold" })
+  call s:h("User1",        { "fg": s:bg, "bg": s:darkAccent1 })
+  call s:h("User2",        { "fg": s:bg, "bg": s:darkAccent2 })
+  call s:h("User3",        { "fg": s:bg, "bg": s:darkAccent3 })
+endif
+
+" Hooks in certain groups:
 hi! link WildMenu	IncSearch
 hi! link FoldColumn	SignColumn
 hi! link MoreMsg	Title
